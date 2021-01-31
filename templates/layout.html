@@ -13,7 +13,7 @@
         <div class="container">
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="index.html">
+                    <a class="navbar-item" href="/">
                         <img src="/static/img/view.png" width="112" height="28">
                     </a>
 
@@ -93,6 +93,25 @@
     }
 
     burger.addEventListener('click', toggle);
+
+    function isActive(elementId) {
+        var element = document.getElementById(elementId);
+        element.classList.add("is-active");
+    }
+
+    function isInactive(elementId) {
+        var element = document.getElementById(elementId);
+        element.classList.remove("is-active");
+    }
+
+    function isInactiveandDoHistoryBack(elementId) {
+        var element = document.getElementById(elementId);
+        element.classList.remove("is-active");
+        window.history.go(-1);
+        return false;
+    }
+
+
 </script>
 
 </html>

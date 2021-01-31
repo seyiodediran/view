@@ -1,117 +1,179 @@
 {% extends "layout.html" %}
 
 {% block body %}
-            <section class="section">
-                <div class="container">
-                    <div class="columns is-mobile">
-                        <div class="column is-3 is-flex is-justify-content-center">
-                            <aside class="menu">
-                               
-                                <ul class="menu-list is-flex is-flex-direction-column is-justify-content-center">
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-home"></i>
-                                        </span>
-                                        <a>Home</a>
+<section class="section">
+    <div class="container">
+        <div class="columns is-mobile">
+            <div class="column is-3 is-flex is-justify-content-center">
+                <aside class="menu">
 
-                                    </li>
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-search"></i>
-                                        </span>
-                                        <a>Explore</a>
+                    <ul class="menu-list is-flex is-flex-direction-column is-justify-content-center">
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-home"></i>
+                            </span>
+                            <a>Home</a>
 
-                                    </li>
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-bell"></i>
-                                        </span>
-                                        <a>Notification</a>
+                        </li>
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <a>Explore</a>
 
-                                    </li>
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                        <a>Messages</a>
+                        </li>
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-bell"></i>
+                            </span>
+                            <a>Notification</a>
 
-                                    </li>
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-bookmark"></i>
-                                        </span>
-                                        <a>Bookmarks</a>
+                        </li>
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <a>Messages</a>
 
-                                    </li>
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-list"></i>
-                                        </span>
-                                        <a>Lists</a>
+                        </li>
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-bookmark"></i>
+                            </span>
+                            <a>Bookmarks</a>
 
-                                    </li>
-                                    <li class="is-size-4 is-flex is-align-items-center">
-                                        <span class="icon">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                        </span>
-                                        <a>More</a>
+                        </li>
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-list"></i>
+                            </span>
+                            <a>Lists</a>
 
-                                    </li>
+                        </li>
+                        <li class="is-size-4 is-flex is-align-items-center">
+                            <span class="icon">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </span>
+                            <a>More</a>
 
-                                </ul>
+                        </li>
 
-                            </aside>
-                        </div>
+                    </ul>
 
-                        <div class="column is-6 is-flex is-justify-content-center">
-                            <!-- <a href="" class="button is-primary">button 1</a> -->
+                </aside>
+            </div>
 
-                            <div class="columns">
-                                <div class="column">
-                                    <div class="card">
-                                        <!-- <header class="card-header">
-                                <p class="card-header-title">
-                                    Component
-                                </p>
-                                <a href="#" class="card-header-icon" aria-label="more options">
-                                    <span class="icon">
-                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                    </span>
-                                </a>
-                            </header> -->
-                                        <div class="card-content">
-                                            <div class="content">
-                                                <form action="https://google.com" method="">
-                                                    <div class="field">
-                                                        <label class="label">Compose Post</label>
-                                                        <div class="control">
-                                                            <textarea class="textarea" cols="100"
-                                                                placeholder="What's on your mind?"></textarea>
-                                                        </div>
-                                                    </div>
+            <div class="column is-6 is-flex is-justify-content-center">
+                <!-- <a href="" class="button is-primary">button 1</a> -->
 
-                                                    <div class="field">
-                                                        <div class="control is-flex is-justify-content-flex-end">
-                                                            <button class="button is-info" type="submit">Post</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                <div class="columns is-desktop">
+                    <div class="column">
+                        <div class="card">
+
+                            <div class="card-content">
+                                <div class="content">
+                                    <form action="/process-post/" method="post">
+                                        <div class="field">
+                                            <label class="label">Compose Post</label>
+                                            <div class="control">
+                                                <div class="notification {{css}}">
+                                                    {{information}}
+                                                </div>
+
+                                                <textarea class="textarea" cols="100" placeholder="What's on your mind?"
+                                                    name="post"></textarea>
                                             </div>
                                         </div>
-                                        <!-- <footer class="card-footer">
-                                
-                            </footer> -->
-                                    </div>
+
+                                        <div class="field">
+                                            <div class="control is-flex is-justify-content-flex-end">
+                                                <button class="button is-info" type="submit">Post</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
 
                         </div>
+                    </div>
+                </div>
 
-                        <div class="column is-3 is-flex is-justify-content-center">
+                    {% for Post in posts %}
+                <div class="columns is-desktop">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
 
+                                <span class="icon mr-4">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </span>
+
+                                {{Post.post}}
+
+                                <div class="modal" id="Post-edit">
+                                    <div class="modal-background">
+                                        <div class="modal-card">
+                                            <form action="/process-edit/{{Post.id}}/" method="post">
+                                                <header class="modal-card-head">
+                                                    <p class="modal-card-title">Edit post</p>
+                                                </header>
+                                                <section class="modal-card-body">
+                                                        <input type="hidden" name="id" class="input"
+                                                            value="{{Post.id}}">
+                                                        <div class="field">
+                                                            <label class="label">Post</label>
+                                                            <div class="control">
+                                                                <input name="posts" class="input" type="text"
+                                                                    value="{{Post.post}}" maxlength="20" required>
+                                                            </div>
+                                                            <p class="help">Edit The post</p>
+                                                        </div>
+                                                </section>
+                                                <footer class="modal-card-foot">
+                                                    <input type="submit" class="button" value="Submit">
+                                                    <input class="button" value="Cancel" onclick="isInactive('Post-edit')">
+                                                </footer>
+                                            </form>
+                                        </div>
+                                        <button class="modal-close" aria-label="close" onclick="isInactiveandDoHistoryBack('Post-edit')"></button>
+                                    </div>
+                                </div>
+
+                                <a class="button is-warning" onclick="isActive('Post-edit')">Edit</a>
+
+                                <a class="button is-danger" onclick="isActive('confirm-delete-{{Post.id}}')">Delete</a>
+                                <div id="confirm-delete-{{Post.id}}" class="modal">
+                                    <div class="modal-background"></div>
+                                    <div class="modal-content">
+                                        <div class="box confirmation-box">
+                                            Are you sure that you want to delete post?<br /><br />
+                                            <a href="/delete/{{Post.id}}/" type="submit"
+                                                class="button is-warning">Yes</a>
+                                            <a class="button"
+                                                onclick="isInactive('confirm-delete-{{Post.id}}')">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <div class="column is-3 is-flex is-justify-content-center">
+
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
+
+<script>
+
+</script>

@@ -3,7 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class Users(db.Model):
-    __tablename__ : 'userreg'
+    __tablename__ = 'userreg'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=False, nullable=False)
     username = db.Column(db.String(50), unique=True, nullable=False)
@@ -18,3 +18,12 @@ class Users(db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.password, password)
+
+
+class Post(db.Model):
+    __tablename__ = 'posts'
+    id = db.Column(db.Integer, primary_key=True)
+    post = db.Column(db.Text, unique=False, nullable=False)
+
+    def __repr__(self):
+        return "<Post {}>".format(self.id)
