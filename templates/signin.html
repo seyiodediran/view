@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="columns">
+        <div class="column">
+
+        </div>
+        <div class="column">
+
+        <div class="notification {{css}}">
+            {{information}}
+        </div>
+
+        <form action="/process-signin/" method="post">
+
+        <div class="field">
+          <label class="label">username</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Username" name="username" >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="**********" name="password" >
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Don't have an account yet?</label> <a href="/signup/">Sign-up</a>
+        </div>
+
+        </form>
+
+        </div>
+    </div>
+
+{% endblock %}

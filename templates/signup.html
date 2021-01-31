@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="columns">
+        <div class="column">
+
+        </div>
+        <div class="column">
+
+        <div class="notification {{css}}">
+            {{information}}
+        </div>
+
+        <form action="/process-signup/" method="post">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Name" name="name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Username" name="username" >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="Email@example.com" name="email" >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="**********" name="password" >
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" type="submit">Submit</button>
+          </div>
+        </div>
+
+        </form>
+
+        </div>
+    </div>
+
+{% endblock %}
