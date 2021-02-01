@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>View</title>
     <link rel="stylesheet" href="/static/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
@@ -69,9 +70,16 @@
                                     Log in
                                 </a>
                                 {% else %}
-                                <a class="button is-danger" href="/logout/">
-                                    Log out
-                                </a>
+                                <div class="is-flex is-align-items-center">
+                                    <div class="content mr-4 mt-4 has-text-link is-size-6 has-text-weight-bold is-uppercase">
+                                        {{session['username']}}
+                                    </div>
+                                    <div class="">
+                                        <a class="button is-danger" href="/logout/">
+                                        Log out
+                                        </a>
+                                    </div>
+                                </div>
                                 {% endif %}
                             </div>
                         </div>

@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5436/viewdb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost:5435/viewdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = b'g\x0b\xaa\xaf0\xd6\n\x88\x1aI9o\x7f\xa5\n\xa4%Ek\xc5\x93\xa6\xa6\n'
 
@@ -191,4 +191,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=3459)

@@ -1,4 +1,10 @@
-li  {
-    list-style-type: none;
-    text-decoration: none;
+body {
+    font-family: "rockwell"
 }
+
+.post {
+    width:85vh;
+  word-wrap: break-word;
+}
+
+

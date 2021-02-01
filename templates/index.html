@@ -66,8 +66,8 @@
             <div class="column is-6 is-flex is-justify-content-center">
                 <!-- <a href="" class="button is-primary">button 1</a> -->
 
-                <div class="columns is-desktop">
-                    <div class="column">
+                <div class="columns is-multiline">
+                    <div class="column is-full">
                         <div class="card">
 
                             <div class="card-content">
@@ -96,20 +96,24 @@
 
                         </div>
                     </div>
-                </div>
+
 
                     {% for Post in posts %}
-                <div class="columns is-desktop">
-                    <div class="column">
+
+                    <div class="column is-full">
                         <div class="card">
                             <div class="card-content">
 
-                                <span class="icon mr-4">
+                                <span class="icon block">
                                     <i class="fas fa-user fa-2x"></i>
                                 </span>
 
-                                {{Post.post}}
+                                <div class="block post">
+                                    {{Post.post}}
+                                </div>
 
+                                {% if session['username'] == "seyiodediran" %}
+                                <div class="is-flex is-justify-content-flex-end">
                                 <div class="modal" id="Post-edit">
                                     <div class="modal-background">
                                         <div class="modal-card">
@@ -139,9 +143,9 @@
                                     </div>
                                 </div>
 
-                                <a class="button is-warning" onclick="isActive('Post-edit')">Edit</a>
+                                <a class="button is-warning " onclick="isActive('Post-edit')">Edit</a>
 
-                                <a class="button is-danger" onclick="isActive('confirm-delete-{{Post.id}}')">Delete</a>
+                                <a class="button is-danger ml-2" onclick="isActive('confirm-delete-{{Post.id}}')">Delete</a>
                                 <div id="confirm-delete-{{Post.id}}" class="modal">
                                     <div class="modal-background"></div>
                                     <div class="modal-content">
@@ -154,12 +158,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
-                </div>
+
                     {% endfor %}
                 </div>
 
